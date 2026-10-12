@@ -1,2 +1,13 @@
- {{conf().name}} - {{conf().date}} - {{conf().location}}
- <button (click)="inc()"></button>
+@if (conference) {
+  <div class="conference-details">
+    <h2>Détails de la conférence</h2>
+    <p><strong>Nom :</strong> {{ conference.name }}</p>
+    <p><strong>Date :</strong> {{ conference.date }}</p>
+    <p><strong>Lieu :</strong> {{ conference.place }}</p>
+  </div>
+} @else {
+  <div class="conference-details">
+    <h2>Conférence introuvable</h2>
+    <p>La conférence demandée n'existe pas.</p>
+  </div>
+}
